@@ -166,7 +166,7 @@ let tl_leave_title = gsap.timeline({
         // markers: true,
         start: "top bottom",
         end: "bottom center",
-        scrub: 1
+        scrub: true
     }
 })
 .add('start')
@@ -182,7 +182,7 @@ let t_section1_txt = gsap.timeline({
         trigger: "#section1",
         start: "top 70%",
         end: "top: 10%",
-        scrub: 1
+        scrub: true
     }
 })
 .from("#section1 > .info > p", {duration: 2, opacity: 0})
@@ -192,7 +192,7 @@ let t_section1_post = gsap.timeline({
         trigger: "#post1",
         start: "top: bottom",
         end: "bottom bottom",
-        scrub: 1
+        scrub: true
     }
 })
 .to("#section1 > .info > p", {duration: 4, opacity: 0,
@@ -206,7 +206,7 @@ let t_section1_svg = gsap.timeline({
         start: "top top",
         end: "top -900%",
         pin: '#usa-map',
-        scrub: 1
+        scrub: true
     }
 })
 
@@ -215,16 +215,16 @@ let t_section2 = gsap.timeline({
         trigger: "#section2",
         start: "top bottom",
         end:"top top",
-        scrub: 1
+        scrub: true
     }
 })
 
 .add('start')
-.to("#usa-map", {duration: 1.5, attr: {viewBox: ne_viewBox}}, 'start')
+.to("#usa-map", {duration: 3, attr: {viewBox: ne_viewBox}}, 'start')
 .from("#section2 > .info > p:nth-child(1)", {duration: 5, opacity: 0}, 'start')
 .from("#section2 > .info > p:nth-child(2)", {duration: 10, opacity: 0}, 'start')
 .from("#section2 > .info > p:nth-child(3)", {duration: 15, opacity: 0}, 'start')
-.to('.NotPA', {duration: 1.5, opacity: 1}, 'start')
+.to('.NotPA', {duration: 3, opacity: 1}, 'start')
 .add('emphasis')
 .to("#state_connecticut", {duration: 1, fill: "#7C878E"}, 'emphasis')
 .fromTo('#state_connecticut', {duration: 1, attr: {transform: "scale(1)"}}, {duration: 1, attr: {transform: "scale(2)"}}, 'emphasis')
@@ -235,7 +235,7 @@ let t_section2_post = gsap.timeline({
         trigger: "#post2",
         start: "top: bottom",
         end: "bottom top",
-        scrub: 1
+        scrub: true
     }
 })
 .add('start')
@@ -254,7 +254,7 @@ let t_section3 = gsap.timeline({
             trigger: "#section3",
             start: "top bottom",
             end: "bottom top",
-            scrub: 1,
+            scrub: true,
             // markers: true
         }
     })
@@ -270,7 +270,7 @@ let t_section3_post = gsap.timeline({
         trigger: "#post3",
         start: "top top",
         end: "bottom center",
-        scrub: 1,
+        scrub: true,
         // markers: true
     }
 })
@@ -284,7 +284,7 @@ let t_section_4 = gsap.timeline({
         trigger: "#section4",
         start: "start 75%",
         end: "center center",
-        scrub: 1
+        scrub: true
     },
     onComplete: function(){
         d3.selectAll('.NotHome').style('pointer-events', 'none')
@@ -307,7 +307,7 @@ let t_section4_post = gsap.timeline({
         trigger: "#post4",
         start: "center center",
         end: "center top",
-        scrub: 1,
+        scrub: true,
         // markers: true
     }
 })
@@ -318,7 +318,7 @@ let t6 = gsap.timeline({
         trigger: "#section5",
         start: "start 70%",
         end: "center 10%",
-        scrub: 1
+        scrub: true
     }
 })
 .add('start')
