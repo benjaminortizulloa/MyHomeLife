@@ -7,8 +7,25 @@
 let bodySize = d3.select('body').node().getBoundingClientRect();
 let infoSize = d3.select('.info').node().getBoundingClientRect()
 
-d3.select('#title-subheader').style('top',d3.select('.title-flag').node().getBoundingClientRect().bottom + 20)
-d3.select('#title-description-container').style("width", Math.floor(d3.select('body').node().clientWidth - d3.select('.title-flag').node().getBoundingClientRect().right))
+let headerWidths;
+
+
+function resizeSubheader(){
+    d3.select('#title-subheader')
+        .style('top',d3.select('.title-flag').node().getBoundingClientRect().bottom + 20)
+
+    headerWidths = [".title-flag", "#title-subheader"].map(x => {
+            return(d3.select(x).node().clientWidth + 10)
+        })
+        
+    
+    // d3.select('#title-description-container')
+    //     .style("width", Math.floor(d3.select('body').node().clientWidth - d3.select('.title-flag').node().getBoundingClientRect().right))
+}
+
+resizeSubheader()
+
+window.onresize = resizeSubheader;
 
 /***************************************
 ****************************************
@@ -156,10 +173,6 @@ d3.select('#usa-map').attr("viewBox", `${Math.floor(paBB.x) - 1} ${Math.floor(pa
  * *******************
 **********************/
 
-let headerWidths = [".title-flag", "#title-subheader"].map(x => {
-    return(d3.select(x).node().clientWidth)
-})
-
 let tl_leave_title = gsap.timeline({
     scrollTrigger: {
         trigger: "#postTitle",
@@ -175,6 +188,7 @@ let tl_leave_title = gsap.timeline({
 .to("#youShouldScroll", {duration: 1.5, opacity: 0}, 'start')
 .to("#title-description > p:nth-child(1)", {duration: 2, opacity: 0}, 'start')
 .to("#title-description > p:nth-child(2)", {duration: 4, opacity: 0}, 'start')
+.to('.title-flag, #title-subheader' , {duration: 3, opacity: 0}, "-=2")
 // .from('#usa-map', {duration: 2, width: 25}, 'start')
 
 let t_section1_txt = gsap.timeline({
