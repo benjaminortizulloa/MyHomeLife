@@ -1,16 +1,18 @@
 body {
     margin: 0;
+    background-color: white;
 }
 
 .fillViewport {
     display: block;
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* flex-direction: column; */
-    /* text-align: center; */
     width: 100%;
-    min-height: 100vh; /* if you don't want it to take up the full screen, reduce this number */
-    /* overflow: hidden; */
+    min-height: 100vh; 
+}
+
+.halfViewport {
+    display: block;
+    width: 100%;
+    height: 50vh;
 }
 
 h1 {
@@ -56,16 +58,21 @@ h2 {
     right: 0;
     height: 90vh;
     right: 0;
-    width: 600px;
+    width: 50vh;
 }
 
 #title-description {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content:end;
+    align-items:flex-start;
     flex-direction: column;
-    text-align: center;
+    /* text-align: center; */
     height: 100%;
+    position: fixed;
+}
+
+#title-description > p {
+    font-size: 2rem;
 }
 
 .header-flag {
@@ -96,7 +103,7 @@ h2 {
     to {padding: 10px;}
 }
 
-P {
+p {
     display: block;
     padding: 0.75rem 1.5rem;
     margin: 0;
@@ -108,8 +115,26 @@ P {
     -moz-appearance: none;
 }
 
-svg {
-    width: 600px; height: 300px; 
+.info {
+    position: fixed; 
+    right: 5%; 
+    width: 25%; 
+    top: 10%; 
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* text-align: center; */
+}
+
+
+
+#usa-map {
+    width: 75%;
+    height: 100%;
+    position: absolute;
+    left: 0%;
 }
 
 .img-holder {
